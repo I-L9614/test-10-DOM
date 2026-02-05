@@ -6,6 +6,7 @@ const score = function getRandomInt(min, max) {
 
 const win = score(50, 100)
 
+
 let gameState = {
     players: [
         { total: 0, current: 0, name: 'רון' },
@@ -35,10 +36,17 @@ function updateDisplay() {
 
     const player1Card = document.getElementById('player1Card');
     const player2Card = document.getElementById('player2Card');
+    const players = [player1Card,player2Card]
 
     if (gameState.currentPlayer === 0) {
-        player1Card.classList.add('active');
-        player2Card.classList.remove('active');
+        const player = Math.floor(Math.random() * 2)
+        players[player].classList.add('active');
+        if (player === 1) {
+            players[player - 1].classList.remove('active');
+        } else {
+
+            players[player + 1].classList.remove('active');
+        }
         player1Card.querySelector('.current-turn').textContent = 'תורך!';
         player2Card.querySelector('.current-turn').textContent = 'המתן...';
     } else {
