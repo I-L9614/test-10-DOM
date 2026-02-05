@@ -3,9 +3,11 @@ const score = function getRandomInt(min, max) {
     const maxFloored = Math.floor(max);
     return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled)
 }
-
 const win = score(50, 100)
-
+let startPlayer = Math.floor(Math.random() * 2)
+const player1Card = document.getElementById('player1Card');
+    const player2Card = document.getElementById('player2Card');
+    const players = [player1Card,player2Card]
 
 let gameState = {
     players: [
@@ -34,18 +36,15 @@ function updateDisplay() {
     document.getElementById('player2Current').textContent = gameState.players[1].current;
 
 
-    const player1Card = document.getElementById('player1Card');
-    const player2Card = document.getElementById('player2Card');
-    const players = [player1Card,player2Card]
+    
 
     if (gameState.currentPlayer === 0) {
-        const player = Math.floor(Math.random() * 2)
-        players[player].classList.add('active');
-        if (player === 1) {
-            players[player - 1].classList.remove('active');
+        players[startPlayer].classList.add('active');
+        if (startPlayer === 1) {
+            players[startPlayer - 1].classList.remove('active');
         } else {
 
-            players[player + 1].classList.remove('active');
+            players[startPlayer + 1].classList.remove('active');
         }
         player1Card.querySelector('.current-turn').textContent = 'תורך!';
         player2Card.querySelector('.current-turn').textContent = 'המתן...';
