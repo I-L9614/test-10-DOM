@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body></body>
+    <div class="container">
+        <div class="header">
+            <h1>🎲 Dice Game</h1>
+            <p class="subtitle">Be the first to reach all points!</p>
+        </div>
+        
+        <div class="game-mode">
+            <button class="mode-btn active" data-mode="pvp">👥 Ron vs Dani</button>
+        </div>
+
+        <div class="players-section">
+            <div class="player-card player1-card active" id="player1Card">
+                <div class="player-header">
+                    <h3>👤 Ron 1</h3>
+                    <div class="current-turn">Your turn!</div>
+                </div>
+
+                <div class="player-stats">
+                    <div class="stat">
+                        <span class="stat-label">Total Score:</span>
+                        <span id="player1Total" class="stat-value">0</span>
+                    </div>
+
+                    <div class="stat">
+                        <span class="stat-label">Current Turn:</span>
+                        <span id="player1Current" class="stat-value">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="player-card player2-card" id="player2Card">
+                <div class="player-header">
+                    <h3>👤 Dani</h3>
+                    <div class="current-turn">Waiting...</div>
+                </div>
+
+                <div class="player-stats">
+                    <div class="stat">
+                        <span class="stat-label">Total Score:</span>
+                        <span id="player2Total" class="stat-value">0</span>
+                    </div>
+
+                    <div class="stat">
+                        <span class="stat-label">Current Turn:</span>
+                        <span id="player2Current" class="stat-value">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dice-container">
+            <div class="dice" id="dice1">
+                <div class="dice-face">
+                </div>
+            </div>
+
+            <div class="dice" id="dice2">
+                <div class="dice-face">
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="rollBtn" class="btn btn-roll">
+                <span class="btn-icon">🎲</span>
+                <span class="btn-icon">🎲</span>
+                Roll again
+            </button>
+            <button id="holdBtn" class="btn btn-hold">
+                <span class="btn-icon">😘</span>
+                Pass the torn
+            </button>
+            <button id="newGameBtn" class="btn btn-new">
+                <span class="btn-icon">🔄</span>
+                New Game
+            </button>
+        </div>
+
+        <div id="resultMessage" class="result-message"></div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
